@@ -13,7 +13,9 @@ namespace mnmTest.Utalities
 
         public static bool CheckOverlapping(Vacation vac1,Vacation vac2)
         {
-            return (vac2.StartDate >= vac1.StartDate && vac2.StartDate <= vac1.EndDate);
+
+            return ((vac2.StartDate >= vac1.StartDate && vac2.StartDate <= vac1.EndDate)
+                || (vac2.EndDate >= vac1.StartDate && vac2.EndDate <= vac1.EndDate));
         }
 
         public static Vacation CreateVacation(int? emmployeeId,int period)
